@@ -1,0 +1,23 @@
+{
+  "name": "js-documentation-mdx",
+  "version": "1.0.0",
+  "description": "MDX-Deck slides for javascript documentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "mdx-deck deck.mdx"
+  },
+  "keywords": [
+    "mdx-deck",
+    "javascript",
+    "dmx",
+    "documentation",
+    "jsdoc"
+  ],
+  "author": "JaGretz",
+  "license": "ISC",
+  "devDependencies": {
+    "mdx-deck": "^1.7.7",
+    "mdx-deck-code-surfer": "^0.4.1"
+  }
+}
