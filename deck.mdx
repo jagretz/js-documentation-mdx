@@ -1,6 +1,114 @@
-# Why Documentation
+import { future } from "mdx-deck/themes";
+// export { future as theme } from "mdx-deck/themes";
+// hack and notes are also nice
+/*
+To modify a theme, export the changes to the theme by destructuring the imported
+theme and any customizations.
+*/
+export const theme = {
+    ...future,
+    p: {
+        color: "gold",
+        fontSize: "2rem"
+    },
+    li: {
+        color: "gold",
+        fontSize: "2rem"
+    }
+}
+
+# Documentation
+# &
+# Javascript
+
+---
+
+## Why Documentation
 
 less cognitive overhead
 
 It is impractical and inefficient to rely on code alone as the source of documentation.
 
+```notes
+Presenter notes
+```
+
+---
+
+
+# Know your Audience
+
+## Users
+
+- allows people to code more efficiently and effectively when they can know how a module
+- works. How to use it' features
+
+
+## Contributor
+
+- Promotes adoption and encourages use
+- Reduces the burden of answering the same question.
+
+
+It's important to understand who or what you are writing documentation for.
+
+---
+
+
+# Before you document
+
+Before you care about documentation, care about code quality.
+
+- naming: method signatures, names, param names, number of
+- Complexity of method
+- Use patterns: SRP, DRY
+- Use syntax to help with verbosity
+
+**Why**
+
+When it comes down to nutes and bolts, the code we write is the ultimate source of truth, not the documentation.
+
+- (If) we might not write documentation.
+    (note) that means we have to rely on the coee
+
+If you have to, try Document Driven Development (DDD)
+  (note) explain what DDD is. it's just like TDD
+  - this will help you to understand what you are trying to do before you write a single line of code
+  - Try Test Driven Development (TDD)
+  - Review with yoru peers
+- Don't document the implementation
+  - Explain the what, not the how.
+When you make a change to a function, don't forget to update the documentation
+
+
+a good article "[Documentation driven development](https://medium.com/blacklane-engineering/documentation-driven-development-8b2ff119104f)"
+
+---
+
+# Types of documentation
+
+1. single-line (inline) the comment should only relate to the exact line it's written on
+1. multi-line (block) explain a section of code.
+
+An alternative to the block comment borrowed from javadoc-style comments is starting the comment
+with a double asterisk, `/** content */`
+
+examples and standards
+
+
+---
+
+
+# Writing Effective Documentation
+
+
+
+
+
+- reference jira tickets, confluence (use pageId)
+- Use TODO and FIXME annotations. When possible, create jira tickets for them following the
+  structure:
+  - why
+  - how
+  - ideas, suggestions, meetings, participants, recommendations
+  the more information the better
