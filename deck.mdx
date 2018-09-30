@@ -1,4 +1,5 @@
 import { future } from "mdx-deck/themes";
+import { Appear, Notes } from "mdx-deck";
 // export { future as theme } from "mdx-deck/themes";
 // hack and notes are also nice
 /*
@@ -6,109 +7,311 @@ To modify a theme, export the changes to the theme by destructuring the imported
 theme and any customizations.
 */
 export const theme = {
+    /* color theme https://flatuicolors.com/palette/gb */
     ...future,
+    h1: {
+        fontSize: "2.5em",
+        color: "#487eb0"
+    },
+    h2: {
+        color: "#40739e"
+    },
+    h3: {
+        color: "#40739e"
+    },
     p: {
-        color: "gold",
+        textAlign: "left",
+        color: "#ddd",
         fontSize: "2rem"
+        // margin: "0"
     },
     li: {
-        color: "gold",
+        color: "#ddd",
         fontSize: "2rem"
+        // padding: "0",
     }
+    // .gold {
+    //     color: "gold"
+    // }
 }
 
 # Documentation
 # &
-# Javascript
+
+<div>
+  <h1 style={{color: "gold", fontSize: "3em"}}>Javascript</h1>
+</div>
 
 ---
 
-## Why Documentation
+# Outline
 
-less cognitive overhead
+- Why
+  - Internal & External (open-source)
+- Before the documentation
+  - Audience
+  - Code quality
+- DDD
+- Types of documentation
+- Syntax
+- Writing effective documentation
 
-It is impractical and inefficient to rely on code alone as the source of documentation.
+Standards & Examples
+
+---
+
+# Why write documentation?
+
+<div style={{color: "#ddd", fontSize: 40, textAlign: "left"}}>
+  <ol>
+    <Appear>
+      <li>Requires less cognitive overhead than reading code</li>
+          <ul>
+              <li>Multiple mediums to understand a system.</li>
+          </ul>
+      <li>It is inefficient to rely on codebase as the only
+        source for documentation</li>
+      <li>Write code <em style={{color: "gold"}}>*more efficiently</em></li>
+          <em>* when done right and is up to date!</em>
+      <li>Use software to it's fullest potential</li>
+      <li>Single source of truth -- minimize duplication</li>
+      <li>Document <em style={{color: "gold"}}>why</em> a decision was made</li>
+      <li>Reduces the burden of answering the same question over and over and over and over...</li>
+    </Appear>
+  </ol>
+</div>
 
 ```notes
-Presenter notes
+mediums/channels: code, html, playgounds
+
+Single source of truth
+- Standards (confluence)
+- linting, formatting
+
+Why a decision was made
+- Standards on use (confluence)
+
+Repeat Yourself
+- how to make a code commits
+- Troubleshooting isntallation or startup
+- Setting up artifactory as the internal npm registry
+```
+
+---
+<!-- style={{color: "#ddd", fontSize: 40, textAlign: "left"}} -->
+<!-- style={{color: "#ddd", fontSize: 30, textAlign: "left"}} -->
+<!-- style={{fontSize: 20, textAlign: "left"}} -->
+
+# For open-source software
+
+<div style={{color: "#ddd", fontSize: 40, textAlign: "left"}}>
+  <ol>
+    <Appear>
+      <li>Promotes adoption of your software</li>
+      <li>Encourages others to use</li>
+      <li>Increases confidence in use</li>
+    </Appear>
+  </ol>
+</div>
+
+```notes
+documentation gives assurance
+- don't assume if it isn't documented
+
+Encourages
+- also contributions to
+```
+---
+
+# Before you document...
+
+<Appear>
+  <h2>Know your Audience</h2>
+</Appear>
+
+```notes
+Who are you writing documentation for?
+- It's fine if it's for yourself -- often a great way to learn if you can explain it.
 ```
 
 ---
 
+### Users
 
-# Know your Audience
+<Appear>
+  <p><strong>How do I use this?</strong></p>
+</Appear>
 
-## Users
+```notes
+Users, typically, care about only one thing...
 
-- allows people to code more efficiently and effectively when they can know how a module
-- works. How to use it' features
+If I pull down entrance-ramp... how do i use it.
 
+Effective documentation allows users to code more efficiently and effectively when they
+can know how a module works.
+```
+---
 
-## Contributor
+### Contributor
 
-- Promotes adoption and encourages use
-- Reduces the burden of answering the same question.
+- How to setup & configure
+- How to test
+- How it works --  internals
+- How to update -- new features, bug fixes, commits, pull-requests
+- Technologies used
+- Standards & styleguides
 
+```notes
+internals
+- ajax -- is it returning a Promise, Observable, Generator, does it expect a callback
 
-It's important to understand who or what you are writing documentation for.
+tech used
+- tck stack: react + redux + Rxjs + i18next
+```
 
 ---
 
-
-# Before you document
-
-Before you care about documentation, care about code quality.
-
-- naming: method signatures, names, param names, number of
-- Complexity of method
-- Use patterns: SRP, DRY
-- Use syntax to help with verbosity
-
-**Why**
-
-When it comes down to nutes and bolts, the code we write is the ultimate source of truth, not the documentation.
-
-- (If) we might not write documentation.
-    (note) that means we have to rely on the coee
-
-If you have to, try Document Driven Development (DDD)
-  (note) explain what DDD is. it's just like TDD
-  - this will help you to understand what you are trying to do before you write a single line of code
-  - Try Test Driven Development (TDD)
-  - Review with yoru peers
-- Don't document the implementation
-  - Explain the what, not the how.
-When you make a change to a function, don't forget to update the documentation
-
-
-a good article "[Documentation driven development](https://medium.com/blacklane-engineering/documentation-driven-development-8b2ff119104f)"
+It's _very_ important to understand who or what you are writing documentation for.
 
 ---
 
-# Types of documentation
+# Before you document...
+
+<Appear>
+  <h2>care about code quality!</h2>
+</Appear>
+
+---
+
+# Code Quality Means...
+
+- Naming: variables, function/method signatures, function parameters
+- Use patterns that simplify your API:
+  - Single Responsibility
+  - Don't Repeat Yourself
+  - Encapsulate the Concept that Varies
+- Use syntax to help reduce verbosity
+
+```notes
+- lambda functions are less verbose than declared functions.
+  - 1 line vs 3 lines
+
+- anonymous functions don't require a function name -- double edged-sword
+
+- write in a declarative-style rather than imperative
+  - That is, iterators over for loops.
+```
+---
+
+At the end of the day, we build software not documentation.
+
+```notes
+Documentation takes time.
+- sometimes we don't (given) have time to write documentation.
+
+Internally speaking,
+- We must rely on well-written code far more often than we can documentation
+```
+
+---
+
+# Document Driven Development (DDD)
+
+<div style={{color: "#ddd", fontSize: 30, textAlign: "left"}}>
+  <br/>
+  <p>
+    Similar to Test Driven Development (TDD) but with documentation!
+  </p>
+
+  <ol>
+    <li>Will help you to understand <em>what</em> you are trying to do <em>before</em> you write a single line of code</li>
+    <li>Review with your peers</li>
+    <li>Don't document the implementation</li>
+    <ol>
+        <li>Explain the <em>"what"</em>, no the <em>"how"</em></li>
+    </ol>
+  </ol>
+
+  <p>When you make a change <em>remember to update the documentation</em>!</p>
+
+  <p>A good article <a href="https://medium.com/blacklane-engineering/documentation-driven-development-8b2ff119104f">"Documentation driven development"</a></p>
+</div>
+
+```notes
+explain what DDD is. it's just like TDD
+
+DDD is...
+```
+
+---
+
+# The many types of documentation
+
+- **Internal**
+  - private
+  - code comments / how things work under the hood
+
+- **External**
+  - Public-facing / open to the public
+  - Exposed functionality
+
+- **Playgrounds**
+  - react components: storybook, MDX,
+  - REPLs, codepens, etc
+  - examples, tutorials
+
+---
+
+# Syntax
 
 1. single-line (inline) the comment should only relate to the exact line it's written on
-1. multi-line (block) explain a section of code.
+  ```js
+  `// single-line comment also referred to as an "inline"
+  ```
+1. multi-line (block) explains a section of code.
+  ```js
+  /*
+   * multi-line also referred to as a "block"
+   */
+  ```
 
 An alternative to the block comment borrowed from javadoc-style comments is starting the comment
-with a double asterisk, `/** content */`
+with a double asterisk `/** content */`. eg
 
-examples and standards
+```js
+/**
+ * jsdoc-styled comments
+ */
+```
 
+
+```notes
+Multi-line for
+- javascript documentation parser / jsdoc
+```
 
 ---
-
 
 # Writing Effective Documentation
 
+- Be brief
+  - Summaries are good
+  - Bullet points are better
+- Point to Referencees
+  - Internal code,
+  - Jira tickets,
+  - External docmentation: \<my-lib\>.com, MDN, Confluence _(use pageId)_
+  - Pull Request comments _(click on the datetime to get the id)_
+- Use `TODO` and `FIXME` marker.
+  - When able, create Jira tickets for these.<br/>
+  Either way, document the _reason_ for the marker.
 
+If you find it useful, use comment markers (`*, !, ?, TODO, FIXME`)
 
+```notes
+- Use `TODO` and `FIXME` marker.
+  - Using "what" and "why" is usually a good place to start.
+  - how: ideas or suggestions are helpful
+  Generally, the more information the better
+```
 
-
-- reference jira tickets, confluence (use pageId)
-- Use TODO and FIXME annotations. When possible, create jira tickets for them following the
-  structure:
-  - why
-  - how
-  - ideas, suggestions, meetings, participants, recommendations
-  the more information the better

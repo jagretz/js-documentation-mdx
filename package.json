@@ -5,7 +5,7 @@
   "main": "deck-mdx",
   "scripts": {
     "build": "mdx-deck build deck.mdx",
-    "start": "mdx-deck deck.mdx",
+    "start": "mdx-deck deck.mdx -p 3100",
     "start:3100": "npm start -- -p 3100"
   },
   "devDependencies": {
@@ -20,5 +20,5 @@
     "jsdoc"
   ],
   "author": "jagretz",
-  "license": "ISC"
+  "license": "MIT"
 }
