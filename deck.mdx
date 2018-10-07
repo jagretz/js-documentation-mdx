@@ -76,13 +76,13 @@ Standards & Examples
       <li>Use software to it's fullest potential</li>
       <li>Single source of truth -- minimize duplication</li>
       <li>Document <em style={{color: "gold"}}>why</em> a decision was made</li>
-      <li>Reduces the burden of answering the same question over and over and over and over...</li>
+      <li>Reduces the burden of answering the same question again and again...</li>
     </Appear>
   </ol>
 </div>
 
 ```notes
-mediums/channels: code, html, playgounds
+mediums/channels: code, html, playgounds, gitbook
 
 Single source of truth
 - Standards (confluence)
@@ -91,7 +91,7 @@ Single source of truth
 Why a decision was made
 - Standards on use (confluence)
 
-Repeat Yourself
+answering the same question
 - how to make a code commits
 - Troubleshooting isntallation or startup
 - Setting up artifactory as the internal npm registry
@@ -157,9 +157,9 @@ can know how a module works.
 - How to setup & configure
 - How to test
 - How it works --  internals
-- How to update -- new features, bug fixes, commits, pull-requests
 - Technologies used
 - Standards & styleguides
+- How to update -- new features, bug fixes, commits, pull-requests
 
 ```notes
 internals
@@ -191,6 +191,7 @@ It's _very_ important to understand who or what you are writing documentation fo
   - Don't Repeat Yourself
   - Encapsulate the Concept that Varies
 - Use syntax to help reduce verbosity
+- Write in a declarative-style
 
 ```notes
 - lambda functions are less verbose than declared functions.
@@ -217,25 +218,23 @@ Internally speaking,
 
 # Document Driven Development (DDD)
 
-<div style={{color: "#ddd", fontSize: 30, textAlign: "left"}}>
-  <br/>
-  <p>
-    Similar to Test Driven Development (TDD) but with documentation!
-  </p>
+Similar to Test Driven Development (TDD) but with documentation!
 
-  <ol>
-    <li>Will help you to understand <em>what</em> you are trying to do <em>before</em> you write a single line of code</li>
-    <li>Review with your peers</li>
-    <li>Don't document the implementation</li>
-    <ol>
-        <li>Explain the <em>"what"</em>, no the <em>"how"</em></li>
-    </ol>
-  </ol>
+  > \[1\] _"The philosophy behind Documentation-Driven Development is a simple:
+  from the perspective of a user, if a feature is not documented, then it
+  doesn't exist, and if a feature is documented incorrectly, then it's broken."_
 
-  <p>When you make a change <em>remember to update the documentation</em>!</p>
+- Document the feature _first_; if it's not documented, it doesn't exist
+  - This will help you to understand _what_ you are trying to do _before_ you write a single line of code
+- Unit tests should be written that test the features as described by the documentation
+- When possible, documentation should be reviewed by users before any
+development
+- When a feature is being modified, it should be modified documentation-first
+- When features change, so do the tests.
 
-  <p>A good article <a href="https://medium.com/blacklane-engineering/documentation-driven-development-8b2ff119104f">"Documentation driven development"</a></p>
-</div>
+When you make a change _remember to update the documentation!_
+
+\[1\] ["Documentation driven development"](https://medium.com/blacklane-engineering/documentation-driven-development-8b2ff119104f)
 
 ```notes
 explain what DDD is. it's just like TDD
@@ -278,11 +277,11 @@ DDD is...
 An alternative to the block comment borrowed from javadoc-style comments is starting the comment
 with a double asterisk `/** content */`. eg
 
-```js
-/**
- * jsdoc-styled comments
- */
-```
+  ```js
+  /**
+   * jsdoc-styled comments
+   */
+  ```
 
 
 ```notes
@@ -296,7 +295,7 @@ Multi-line for
 
 - Be brief
   - Summaries are good
-  - Bullet points are better
+  - Bullet points are great
 - Point to Referencees
   - Internal code,
   - Jira tickets,
@@ -315,3 +314,6 @@ If you find it useful, use comment markers (`*, !, ?, TODO, FIXME`)
   Generally, the more information the better
 ```
 
+---
+
+# Examples!
