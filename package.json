@@ -1,24 +1,23 @@
 {
-  "name": "js-documentation-mdx",
-  "version": "1.0.0",
-  "description": "MDX-Deck slides for javascript documentation",
-  "main": "deck-mdx",
-  "scripts": {
-    "build": "mdx-deck build deck.mdx",
-    "start": "mdx-deck deck.mdx -p 3100",
-    "start:3100": "npm start -- -p 3100"
-  },
-  "devDependencies": {
-    "mdx-deck": "^1.7.7",
-    "mdx-deck-code-surfer": "^0.4.1"
-  },
-  "keywords": [
-    "mdx-deck",
-    "javascript",
-    "dmx",
-    "documentation",
-    "jsdoc"
-  ],
-  "author": "jagretz",
-  "license": "MIT"
+    "name": "js-documentation-mdx-deck",
+    "version": "1.0.0",
+    "description": "MDX-Deck slides for \"why\" javascript documentation",
+    "main": "deck-mdx",
+    "scripts": {
+        "build": "mdx-deck build deck.mdx",
+        "//start": "Run on port 3100 cuz sometimes the default port 8080 is occupied by another service",
+        "start": "mdx-deck deck.mdx -p 3100"
+    },
+    "devDependencies": {
+        "mdx-deck": "^1.7.7"
+    },
+    "keywords": [
+        "javascript",
+        "documentation",
+        "jsdoc",
+        "mdx",
+        "mdx-deck"
+    ],
+    "author": "jagretz",
+    "license": "MIT"
 }
